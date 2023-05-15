@@ -9,12 +9,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { FormClienteComponent } from './clientes/form-cliente.component';
+import { VentasComponent } from './ventas/ventas.component';
+import { FormVentaComponent } from './ventas/form-venta.component';
 
 const routes:Routes=[
   { path:'', redirectTo:'/clientes', pathMatch:'full'},
   { path:'clientes', component:ClientesComponent },
+  { path:'', redirectTo:'/ventas', pathMatch:'full'},
+  { path:'ventas', component:VentasComponent },
+
   { path:'clientes/form', component:FormClienteComponent },
   { path:'clientes/form/:id', component:FormClienteComponent },
+  { path:'ventas/form', component:FormVentaComponent },
+  { path:'ventas/form/:id', component:FormVentaComponent },
 
 ]
 
@@ -23,6 +30,8 @@ const routes:Routes=[
     AppComponent,
     ClientesComponent,
     FormClienteComponent,
+    VentasComponent,
+    FormVentaComponent,
   ],
   imports: [
     BrowserModule,

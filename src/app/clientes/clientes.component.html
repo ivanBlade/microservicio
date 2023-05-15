@@ -1,6 +1,6 @@
 
 <div class="container">
-<h1>{{titulo}}</h1>
+  <button class="btn btn-success" type="button" [routerLink]="['/ventas']">VENTAS</button>
 <h2>{{prueba}}</h2>
 
 <button class="btn btn-info" type="button" [routerLink]="['/clientes/form']">Nuevo Cliente</button>
@@ -31,7 +31,7 @@
       <td>{{cliente.telefono}}</td>
       <td>{{cliente.correo}}</td>
       <td> <button type="button" name="button" class="btn btn-primary" [routerLink] ="['/clientes/form', cliente.id]">Editar</button> </td>
-      <td> <button class="btn btn-danger" (click) ="delete(cliente)">Eliminar</button> </td>
+      <td> <button class="btn btn-danger" (click) ="delete(cliente)" >Eliminar</button> </td>
     </tr>
   </tbody>
 </table>
