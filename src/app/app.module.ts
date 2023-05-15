@@ -1,14 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
+import {Routes, RouterModule} from '@angular/router';
+
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { FormClienteComponent } from './clientes/form-cliente.component';
+
+const routes:Routes=[
+  { path:'', redirectTo:'/clientes', pathMatch:'full'},
+  { path:'clientes', component:ClientesComponent },
+  { path:'clientes/form', component:FormClienteComponent },
+  { path:'clientes/form/:id', component:FormClienteComponent },
+
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClientesComponent,
+    FormClienteComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
